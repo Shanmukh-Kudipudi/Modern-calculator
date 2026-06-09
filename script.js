@@ -19,3 +19,20 @@ function calculate() {
     display.value = "Error";
   }
 }
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  if (
+    "0123456789+-*/().".includes(key)
+  ) {
+    appendValue(key);
+  }
+
+  if (key === "Enter") {
+    calculate();
+  }
+
+  if (key === "Backspace") {
+    deleteLast();
+  }
+});
